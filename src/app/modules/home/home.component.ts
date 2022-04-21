@@ -89,19 +89,30 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  public startOrBreak(): void {
-    !this.isBroken ? this.breakMoneybox() : this.startMoneybox();
+  public restoreOrBreak(): void {
+    !this.isBroken ? this.breakMoneybox() : this.restoreMoneybox();
   }
 
-  private breakMoneybox(): void {
-    this.isBroken = true;
-    this.resetAll();
-    this.getData();
+  private async breakMoneybox(): Promise<void> {
+    const isConfirm = await this.alertService.alertConfirm(
+      '¿Está seguro que desea romper la alcancía?',
+      'warning'
+    );
+    if (isConfirm) {
+      this.isBroken = true;
+      this.resetAll();
+      this.getData();
+    }
   }
 
-  private startMoneybox(): void {
+  public startMoneybox(): void {
     this.isBroken = false;
     this.moneybox = [];
+    this.resetAll();
+  }
+
+  public restoreMoneybox(): void {
+    this.isBroken = false;
     this.resetAll();
   }
 

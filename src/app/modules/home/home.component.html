@@ -34,13 +34,15 @@
       </div>
       <div class="buttons">
         <button
+          *ngIf="!isBroken"
           class="btn btn-primary btn-space"
           type="submit"
-          [disabled]="moneyboxForm.invalid || isBroken"
+          [disabled]="moneyboxForm.invalid"
         >
           Guardar
         </button>
         <button
+          *ngIf="!isBroken"
           class="btn btn-cancel btn-space"
           type="button"
           (click)="resetAll()"
@@ -48,11 +50,19 @@
           Cancelar
         </button>
         <button
-          class="btn btn-secondary"
+          class="btn btn-secondary btn-space"
           type="button"
-          (click)="startOrBreak()"
+          (click)="restoreOrBreak()"
         >
-          {{ isBroken ? "Alcancía nueva" : "Romper Alcancía" }}
+          {{ isBroken ? "Restaurar Alcancía" : "Romper Alcancía" }}
+        </button>
+        <button
+          *ngIf="isBroken"
+          class="btn btn-primary"
+          type="button"
+          (click)="startMoneybox()"
+        >
+          Alcancía Nueva
         </button>
       </div>
     </form>
