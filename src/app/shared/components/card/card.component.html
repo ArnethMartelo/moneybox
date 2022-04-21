@@ -1,0 +1,8 @@
+<section class="card" [style.padding]="padding" [class.shadow-strong]="shadowStrong">
+  <section class="header" *ngIf="hasHeader" [class.shadow-strong]="shadowStrong">
+    <h3 class="card-title" *ngIf="title">{{ title }}</h3>
+  </section>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</section>

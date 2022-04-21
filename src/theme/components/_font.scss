@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  font-weight: initial;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local('Poppins Regular'), local('Poppins-Regular'),
+    url('https://fonts.gstatic.com/s/poppins/v13/pxiEyp8kv8JHgFVrJJfecg.woff2')
+      format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  font-weight: initial;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
+    url('https://fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2')
+      format('woff2');
+}

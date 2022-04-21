@@ -1,0 +1,73 @@
+@import "../../../theme/mixin.scss";
+
+.content-table {
+  overflow-x: auto;
+  display: grid;
+  font-family: var(--normal-font);
+}
+
+.table {
+  width: 100%;
+  background: #ffff;
+  @include flex(stretch, flex-start, column);
+}
+
+thead {
+  height: 42px;
+  @include flex(center);
+  &.border-bottom {
+    color: white;
+    border-bottom: 2px solid #92949c;
+    background: #691e53;
+  }
+  tr {
+    width: 100%;
+    @include flex();
+    th {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+  }
+}
+
+tbody {
+  @include flex(stretch, flex-start, column);
+  tr {
+    padding: 6px 0px;
+    border-bottom: 1px solid #92949c;
+    @include flex();
+    td {
+      flex: 1;
+      @include flex(center, center);
+      span {
+        font-family: var(--bold-font);
+        text-align: center;
+      }
+      .btn {
+        width: 40px;
+        background: transparent;
+        cursor: pointer;
+      }
+      .btn-debtors-alert {
+        background-color: #eb445a;
+        color: #ffffff;
+      }
+      .btn-options-relation {
+        background-color: #615ffc;
+      }
+      img {
+        height: 25px;
+        width: 25px;
+        margin: 0;
+        &::part(image) {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10%;
+        }
+      }
+    }
+  }
+}
